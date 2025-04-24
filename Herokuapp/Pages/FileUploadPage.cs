@@ -48,9 +48,9 @@ namespace Herokuapp.Pages
 
         public void UploadFile(string fileName)
         {
-           
-            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "TestFiles", fileName);
 
+            string projectRoot = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            string filePath = Path.Combine(projectRoot, "TestFiles", fileName);
             Console.WriteLine("File path: " + filePath);
 
             if (!File.Exists(filePath))
